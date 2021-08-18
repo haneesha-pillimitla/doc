@@ -1,2 +1,32 @@
 java 8
 -----------------------------------------------------
+supports
+=>functional programing-> lambda expression
+
+void abstractFun(int x);//declaration in FuncInterface interface
+FuncInterface fobj = (int x)->System.out.println(2*x);//obj creatin to interface and lambda expersion 
+fobj.abstractFun(5);//calling
+
+,functional interfaces in Java
+            
+
+
+=>javascript engine
+=>new APIs (date time manipulation , new streaming APi)
+
+
+
+features
+=>lambda expression -adds functional processing capability to java
+=>Method references - referencing functions by their names insead 
+
+   There are four kinds of method references:
+     Static methods.
+     Instance methods of particular objects.
+     Instance methods of an arbitrary object of a particular type.
+     Constructor
+
+=>Default method - interface to have default method implementation
+=>New tools-new compilwe tools and utilites are added like 'jdeps' to figure out dependencies.
+=>stream API -new stream API to facilitate pipeline processing( the Stream API is used to process collections of objects. A stream is a sequence of objects that supports various methods which can be pipelined to produce the desired result. The features of Java stream are – A stream is not a data structure instead it takes input from the Collections, Arrays or I/O channels.)
+=>Date Time API-improved date time API
