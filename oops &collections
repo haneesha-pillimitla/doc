@@ -1,2 +1,10 @@
 oops
 ------------------------------------------------------
+
+=>onjects--it is an entity
+it shares two characteristics (state and behavior)
+                                 
+=>data encapsulation-- hiding the implementation details of the class from the user
+it binds code and data together
+
+=>public interface- software entities interact with each other in a system or network,this help in data security
