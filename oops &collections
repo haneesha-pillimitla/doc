@@ -1,6 +1,23 @@
 oops
 ------------------------------------------------------
 
+oops -- methodolagy to design program using object and classes
+
+
+object real world entity
+class- blue print of an object
+            animal class ----object is dog,cat,sheep
+         hand properties like breed , size, age, color
+              behavior like bark,sleep
+
+
+---- oops it bottom to up
+             divide into objects
+               access modifier
+                 more secure
+                  supports overloading
+
+
 =>onjects--it is an entity
 it shares two characteristics (state and behavior)
                                  
@@ -8,3 +25,10 @@ it shares two characteristics (state and behavior)
 it binds code and data together
 
 =>public interface- software entities interact with each other in a system or network,this help in data security
+
+=>inheritance 
+(isA) relationship
+
+inheriting the properties of parent class
+(extends)
+
