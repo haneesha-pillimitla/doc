@@ -1,2 +1,12 @@
 spring
 ------------------------------
+contain dependencies to perform perticular functionality
+spring-boot-starter-web =1st one have initial dependencies
+
+
+
+pom.xml
+---------
+in pom.xml 
+parent pom is mandatory to control version of child dependancies
+
