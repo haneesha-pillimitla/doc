@@ -1,0 +1,73 @@
+features of git
+->capabulity of version and source management contral system
+->helps create multiple independent local brances
+-> fast and distributed
+->open source and standard
+--------------------------------------------------------------
+git is used managing code
+---------------------------------------------------------------
+gitLab is a  comprehensive tool that can be selected to build CI/CD pipelines.
+features of gitlab
+->Comprehensive DevOps lidecycle support
+->improves cycle time
+->Reduces development cost and time to market
+----------------------------------------------------------------------------------
+
+GitLab  CI/CD Workflow
+
+ create(developer create new branch)
+ |
+ push(push for code changes)
+ |
+ -----
+ build and test
+ |
+ push
+ |
+ build and test
+ -----
+ |
+ review and improve
+ |
+ merge( merge to master branch )
+ |
+ -----
+ automated build ,test and deploy
+ ------------------------------------------------------------------------------------
+ 
+benefits of using GitLab for CI/CD
+ ->use a single tool from planning to deployment
+ ->run distributed jobs on separate machines
+ -> run jobs in parallel on multiple machines
+ -> make use of optimized delivery
+
+--------------------------------------------------------------------------------------
+
+gitLab.com 
+
+--------------------------------------------------------------------------------------
+
+beanstalk features
+ ->capability to help write,review and deploy code quickly
+ ->integrated support to implement robust Git and SVM hosting
+ ->capability to support issues and review management
+ ->supporting multiple different environments
+ ->provides enterprise-grade security , performance and reliability
+ ->provides built in integritions
+ 
+ -------------------------------
+ 
+ user accounts in beanstalk
+ 
+ ->account owner
+ ->admin
+ ->regular user
+ ->anonymous user
+ ->teams
+ 
+ --------------------------------
+ elements of beanstalk 
+ ->workflow(
+ ->environments
+ ---------------------------------
+ 
