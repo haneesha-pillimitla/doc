@@ -1,0 +1,32 @@
+unit testion and junit
+
+->unittesting
+   gives early look in quality
+   breaking doen a system into its components
+
+junit=automation and repeatability to allow more testiong more oftens
+
+
+junit
+ adding the junit ->properties->java build path->libreries->add junit lib
+ adding java test classes -> select wizard ->java->junit-> 
+ 
+ 
+ 
+ assert -fource full start
+ fall("not yet implemented");--error if the code is not difined
+ 
+ definng test in junit
+ 
+ running from java code
+ general Assertions
+ Number Equality
+ Object Equality
+ array Equality
+ Basic assert That Options
+ combinations and assert that
+ custom assertThat Matchers
+ Assume versus Assert
+ Setting up test Cases
+ Test Fixtures
+ 
