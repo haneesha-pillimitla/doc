@@ -10,3 +10,33 @@ pom.xml
 in pom.xml 
 parent pom is mandatory to control version of child dependancies
 
+
+@EnableAutoConfiguration 
+
+
+features of spring boot 
+-----------------------------
+1.spring CLI
+2.spring dependency
+3.starter initializer
+4.Auto-configuration
+5.spring actuator
+6.logging and security
+
+
+we need springboot because of its ->stability,based on java virtual machines,connectivity,cloud-native,flexibility,opensource
+
+
+
+ spring                                          springboot
+ ----------------------------------------------------------------------------------
+->takes time to have spring application          ->shorter way to run spring application
+->manages life cycle of java                     ->need not woeey about configuring a data source
+->dependency injuction framework                 ->preconfigured set of frameworks/technologies
+
+
+
+
+
+
+
