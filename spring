@@ -120,6 +120,40 @@ springboot anotations
 The spring boot annotations are mostly placed in org.springframework.boot.autoconfigure and org.springframework.boot.autoconfigure.condition packages. Let’s learn about some frequently used spring boot annotations as well as which work behind the scene.
 
 
+1.	@SpringBootApplication
+             @SpringBootApplication is the main class of a Spring Boot application and application starts from here.
+2.	@SpringBootConfiguration
+             It indicates that a class provides Spring Boot application configuration. It can be used as an alternative to the Spring’s standard @Configuration annotation so that configuration can be found automatically.
+             Application should only ever include one @SpringBootConfiguration and most idiomatic Spring Boot applications will inherit it from @SpringBootApplication
+3.	@EnableAutoConfiguration
+             This annotation enables auto-configuration of the Spring Application Context, attempting to guess and configure beans that we are likely to need based on the presence of predefined classes in classpath
+4.	@ImportAutoConfiguration
+              It import and apply only the specified auto-configuration classes. The difference between @ImportAutoConfiguration and @EnableAutoConfiguration is that later attempts to configure beans that are found in the classpath during scanning, whereas @ImportAutoConfiguration only runs the configuration classes that we provide in the annotation.
+5.	@AutoConfigureBefore,@AutoConfigureAfter,@AutoConfigureOrder
+              We can use the @AutoConfigureAfter or @AutoConfigureBefore annotations if our configuration needs to be applied in a specific order (before of after).
+              If we want to order certain auto-configurations that should not have any direct knowledge of each other, we can also use @AutoConfigureOrder. That annotation has the same semantic as the regular @Order annotation but provides a dedicated order for auto-configuration classes.
 
 
+----------------------------------------------------------------------------
+springboot rest API
+-----------------------
+JAX-RS 2.0 is a framework designed to help you write RESTful applications both on the client and server side. Below tutorials are build using RESTEasy framework.
 
+to create project
+-------------------
+1. http://start.spring.io/. Here, you can select all dependencies which you have currently in mind, and generate the project.
+ 2. import to eclipse
+ 3.selectiong pom.xml file while importing
+ -----------------------
+ or we can directly create from sts
+ 
+ Create REST Controller
+ creating a controller package//last layer 
+ 
+ 
+ @RestController
+public class SignupController 
+{
+
+create model 
+//pojo with getters and setters
