@@ -5,6 +5,19 @@ before microservices -monolithic architecture (big container contain all service
 *microservices ,aka nicroservices architecture,is an architectural style that structures an application as a collection of small autonomous services, modelled around a business domain
 
 
+challenges-perceptibility
+          -configuration management
+          -debugging
+          -consistency
+          -automating the components
+
+solutions for this challenges is springboot
+
+
+
+
+
+
 microservies integration
 
 differences
