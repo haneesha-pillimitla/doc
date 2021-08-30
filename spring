@@ -119,6 +119,7 @@ springboot anotations
 -----------------------------------------
 The spring boot annotations are mostly placed in org.springframework.boot.autoconfigure and org.springframework.boot.autoconfigure.condition packages. Let’s learn about some frequently used spring boot annotations as well as which work behind the scene.
 
+6.@Autowired -Marks a constructor, field, setter method, or config method as to be autowired by dependency injection. We can mark whether the annotated dependency is required (mandatory to populate) or not using it’s ‘required’ attribute. By default, its value is ‘true’.
 
 1.	@SpringBootApplication
              @SpringBootApplication is the main class of a Spring Boot application and application starts from here.
