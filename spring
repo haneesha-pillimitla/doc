@@ -100,6 +100,21 @@ Bootstrapping the Application
 To run spring boot application, we need to use @SpringBootApplication annotation. Behind the scenes, that’s equivalent to @Configuration, @EnableAutoConfiguration, and @ComponentScan together.
 
 
+package com.example.demo;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class AirlineProjectApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(AirlineProjectApplication.class, args);
+		
+		System.out.println("application started.....");
+		
+	}
+
+}
 
 
