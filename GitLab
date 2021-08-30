@@ -33,6 +33,71 @@ GitLab  CI/CD Workflow
  |
  -----
  automated build ,test and deploy
+ -----------------------------------------------------------------------------------
+ 
+ 
+   git --version    //to check version
+
+ 
+   git config --global user.name “xxxx”
+   git config --global user.name          //to check username
+
+   git config --global user.email “xxxx”
+   git config --global user.email          //to check email
+
+   git config --global --list
+
+ Create a demo project/folder  in local & add to git
+  
+   
+Goto cmd OR terminal OR git bash 
+     CD to the location of the folder and run following commands
+   git init  //adding git
+   git status
+   git add .
+   git commit -m “msg”
+   git push -u “url” master
+
+ 
+ -----------------------------------------------------------------------------------
+ 
+ SSH -secured shell
+  used for authentication
+  by setting we can connect to gitlab without username and password
+  
+  setting ssh key
+  -----------------
+cmd- $ ssh-keygen
+path-enter
+enter
+goto gitlab->settings-> ssh keys ->contents of id-rsa.pub file in the path and add key
+verify ssh key is added
+----------------------------------------------------------------------------------
+
+gitlab runner
+-------------------
+gitlab runner is used to run jobs and send results back to GitLab
+
+-setting gitlabrunner
+installation
+create a new folder and paste the downloded file and rename  
+git dash run as adm->go to folder location
+run cmd -> gitlab-runner.exe install
+to check version ->gitlab-runner --version
+
+-register gitlab(process to bind runner with gitlab instatnce)
+to register gitlab-runner.exe register
+enter
+tokken will be in gitlab account( in project ->settings->cicd->runners-> set up a sepcific runner manually
+gitlad ci tags
+eg;-ssh, ci
+
+-start 
+gitlab-runner.exe start //to start
+gitlab-runner.exe stop //to stop runner
+
+
+
  ------------------------------------------------------------------------------------
  
 benefits of using GitLab for CI/CD
