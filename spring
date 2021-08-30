@@ -1,6 +1,14 @@
 spring
 ------------------------------
 contain dependencies to perform perticular functionality
+
+
+spring boot
+------------------------------
+spring boot is a module that provides Rad(rapid Application Development)feature to spring framework.Spring boot is highly dependent on the starter templates and auto-connfiguration features that are very powerful 
+
+
+
 spring-boot-starter-web =1st one have initial dependencies
 
 
@@ -8,15 +16,51 @@ spring-boot-starter-web =1st one have initial dependencies
 pom.xml
 ---------
 in pom.xml 
+
 parent pom is mandatory to control version of child dependancies
+
+<parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.5.3.RELEASE</version>
+    <relativePath />
+</parent>
+
+
+
+dependencies contain dependency like
+
+<dependencies>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-json</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-web</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-tomcat</artifactId>
+    </dependency>
+</dependencies>
+
+
 
 
 @EnableAutoConfiguration 
+----------------------------
+Spring boot auto-configuration logic is implemented in spring-boot-autoconfigure.jar and works on top of @Conditional, @ConditionalOnClass and @ConditionalOnProperty annotations.
+Spring boot auto-configuration scans the classpath, finds the libraries in the classpath, and then attempts to guess the best configuration for them, and finally configure all such beans.
 
 
 features of spring boot 
 -----------------------------
-1.spring CLI
+1.spring CLI-
 2.spring dependency
 3.starter initializer
 4.Auto-configuration
@@ -35,6 +79,25 @@ we need springboot because of its ->stability,based on java virtual machines,con
 ->dependency injuction framework                 ->preconfigured set of frameworks/technologies
 
 
+
+Embedded Servers
+-----------------------------------------
+Spring boot applications always include tomcat as default embedded server. It enables us to run any Spring boot application from the command prompt without including any complex server infrastructure.
+
+//in pom.xml
+<dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-web</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-tomcat</artifactId>
+    </dependency>
+
+
+Bootstrapping the Application
+-----------------------------------------
+To run spring boot application, we need to use @SpringBootApplication annotation. Behind the scenes, that’s equivalent to @Configuration, @EnableAutoConfiguration, and @ComponentScan together.
 
 
 
