@@ -11,9 +11,57 @@ junit
  adding the junit ->properties->java build path->libreries->add junit lib
  adding java test classes -> select wizard ->java->junit-> 
  
+ --------------------------------------------------------------------------------------------------------------------
+ JUnit 4-> has everything bundled into single jar file.requires java 5 or higher
+
+Junit 5-> is composed of 3 sub-projects i.e. JUnit Platform, JUnit Jupiter and JUnit Vintage. requires java8 and higher
+
+JUnit Platform
+---------------
+It defines the TestEngine API for developing new testing frameworks that runs on the platform.
+
+JUnit Jupiter
+---------------
+It has all new junit annotations and TestEngine implementation to run tests written with these annotations.
+
+JUnit Vintage
+---------------
+To support running JUnit 3 and JUnit 4 written tests on the JUnit 5 platform.
  
  
+ FEATURE                                               	 JUNIT 4	            JUNIT 5
+Declare a test method	                                  @Test	               @Test
+Execute before all test methods in the current class  	 @BeforeClass        	@BeforeAll
+Execute after all test methods in the current class	    @AfterClass	          @AfterAll
+Execute before each test method                         	 @Before              	 @BeforeEach
+Execute after each test method	                          @After	                 @AfterEach
+Disable a test method / class	                             @Ignore	              @Disabled
+Test factory for dynamic tests                             NA	                    @TestFactory
+Nested tests	                                            NA	                    @Nested
+Tagging and filtering	                                   @Category	              @Tag
+Register custom extensions                                 NA	                    @ExtendWith 
+
+
+
+
+
  assert -fource full start
+ 
+Junit 4-> org.junit.Assume contains methods for stating assumptions about the conditions in which a test is meaningful. It has following five methods:
+----------------------
+assumeFalse()
+assumeNoException()
+assumeNotNull()
+assumeThat()
+assumeTrue()
+
+Junit 5->org.junit.jupiter.api.Assumptions contains methods for stating assumptions about the conditions in which a test is meaningful. It has following three methods:
+--------------------------
+assumeFalse()
+assumingThat()
+assumeTrue()
+
+
  fall("not yet implemented");--error if the code is not difined
  
  definng test in junit
