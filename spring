@@ -1,144 +1,19 @@
-spring
-------------------------------
-contain dependencies to perform perticular functionality
 
-
-spring boot
-------------------------------
-spring boot is a module that provides Rad(rapid Application Development)feature to spring framework.Spring boot is highly dependent on the starter templates and auto-connfiguration features that are very powerful 
-
-
-
-spring-boot-starter-web =1st one have initial dependencies
-
-
-
-pom.xml
----------
-in pom.xml 
-
-parent pom is mandatory to control version of child dependancies
-
-<parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>2.5.3.RELEASE</version>
-    <relativePath />
-</parent>
-
-
-
-dependencies contain dependency like
-
-<dependencies>
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter</artifactId>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-json</artifactId>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-web</artifactId>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-tomcat</artifactId>
-    </dependency>
-</dependencies>
-
-
-
-
-@EnableAutoConfiguration 
-----------------------------
-Spring boot auto-configuration logic is implemented in spring-boot-autoconfigure.jar and works on top of @Conditional, @ConditionalOnClass and @ConditionalOnProperty annotations.
-Spring boot auto-configuration scans the classpath, finds the libraries in the classpath, and then attempts to guess the best configuration for them, and finally configure all such beans.
-
-
-features of spring boot 
------------------------------
-1.spring CLI-
-2.spring dependency
-3.starter initializer
-4.Auto-configuration
-5.spring actuator
-6.logging and security
-
-
-we need springboot because of its ->stability,based on java virtual machines,connectivity,cloud-native,flexibility,opensource
-
-
-
- spring                                          springboot
- ----------------------------------------------------------------------------------
-->takes time to have spring application          ->shorter way to run spring application
-->manages life cycle of java                     ->need not woeey about configuring a data source
-->dependency injuction framework                 ->preconfigured set of frameworks/technologies
-
-
-
-Embedded Servers
------------------------------------------
-Spring boot applications always include tomcat as default embedded server. It enables us to run any Spring boot application from the command prompt without including any complex server infrastructure.
-
-//in pom.xml
-<dependency>
-        <groupId>org.springframework</groupId>
-        <artifactId>spring-web</artifactId>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-tomcat</artifactId>
-    </dependency>
-
-
-Bootstrapping the Application
------------------------------------------
-To run spring boot application, we need to use @SpringBootApplication annotation. Behind the scenes, that’s equivalent to @Configuration, @EnableAutoConfiguration, and @ComponentScan together.
-
-//initial file when we create the project
-package com.example.demo;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;            //for anotations
-@SpringBootApplication
-public class AirlineProjectApplication {
-	public static void main(String[] args) {
-		SpringApplication.run(AirlineProjectApplication.class, args);
-		System.out.println("application started.....");
-	}
-}
-
-When we run the application, auto-configuration feature starts loading all the configuration files, configure them and bootstrap the application based on application properties in application.properties file in /resources folder.
-
-src/main/resources->application.properties
-
-springboot anotations
------------------------------------------
-The spring boot annotations are mostly placed in org.springframework.boot.autoconfigure and org.springframework.boot.autoconfigure.condition packages. Let’s learn about some frequently used spring boot annotations as well as which work behind the scene.
-
-6.@Autowired -Marks a constructor, field, setter method, or config method as to be autowired by dependency injection. We can mark whether the annotated dependency is required (mandatory to populate) or not using it’s ‘required’ attribute. By default, its value is ‘true’.
-
-1.	@SpringBootApplication
-             @SpringBootApplication is the main class of a Spring Boot application and application starts from here.
-2.	@SpringBootConfiguration
-             It indicates that a class provides Spring Boot application configuration. It can be used as an alternative to the Spring’s standard @Configuration annotation so that configuration can be found automatically.
-             Application should only ever include one @SpringBootConfiguration and most idiomatic Spring Boot applications will inherit it from @SpringBootApplication
-3.	@EnableAutoConfiguration
-             This annotation enables auto-configuration of the Spring Application Context, attempting to guess and configure beans that we are likely to need based on the presence of predefined classes in classpath
-4.	@ImportAutoConfiguration
-              It import and apply only the specified auto-configuration classes. The difference between @ImportAutoConfiguration and @EnableAutoConfiguration is that later attempts to configure beans that are found in the classpath during scanning, whereas @ImportAutoConfiguration only runs the configuration classes that we provide in the annotation.
-5.	@AutoConfigureBefore,@AutoConfigureAfter,@AutoConfigureOrder
-              We can use the @AutoConfigureAfter or @AutoConfigureBefore annotations if our configuration needs to be applied in a specific order (before of after).
-              If we want to order certain auto-configurations that should not have any direct knowledge of each other, we can also use @AutoConfigureOrder. That annotation has the same semantic as the regular @Order annotation but provides a dedicated order for auto-configuration classes.
-
-
-----------------------------------------------------------------------------
-springboot rest API
+	Spring
 -----------------------
-JAX-RS 2.0 is a framework designed to help you write RESTful applications both on the client and server side. Below tutorials are build using RESTEasy framework.
+	contain dependencies to perform particular functionality
+
+
+
+	spring boot
+	------------------------------
+	spring boot is a module that provides RAD(rapid Application Development)feature to spring framework .Spring boot is highly dependent on the starter templates and auto-configuration features that are very powerful 
+
+
+
+
+	spring-boot-starter-web =1st one have initial dependencies
+
 
 to create project
 -------------------
@@ -147,14 +22,178 @@ to create project
  3.selectiong pom.xml file while importing
  -----------------------
  or we can directly create from sts
- 
- Create REST Controller
+
+
+
+
+
+
+
+	pom.xml
+	---------
+	in pom.xml 
+
+
+	parent pom is mandatory to control version of child dependencies
+
+	  <parent>
+	      <groupId>org.springframework.boot</groupId>
+	      <artifactId>spring-boot-starter-parent</artifactId>
+	      <version>2.5.3.RELEASE</version>
+	      <relativePath />
+	  </parent>
+
+
+
+
+	dependencies contain dependency like
+
+	  <dependencies>
+	     <dependency>
+	         <groupId>org.springframework.boot</groupId>
+	         <artifactId>spring-boot-starter</artifactId>
+	     </dependency>
+	     <dependency>
+	         <groupId>org.springframework.boot</groupId>
+	         <artifactId>spring-boot-starter-json</artifactId>
+	     </dependency>
+	     <dependency>
+	         <groupId>org.springframework</groupId>
+	         <artifactId>spring-web</artifactId>
+	     </dependency>
+	     <dependency>
+	         <groupId>org.springframework.boot</groupId>
+	         <artifactId>spring-boot-starter-tomcat</artifactId>
+	     </dependency>
+	  </dependencies>
+
+
+
+
+
+
+
+
+
+
+	
+
+	
+
+	features of spring boot 
+	-----------------------------
+	1.spring CLI
+	2.spring dependency
+	3.starter initializer
+	4.Auto-configuration
+	5.spring actuator
+	6.logging and security
+	
+
+	
+
+	we need spring boot because of its ->stability, based on java virtual machines , connectivity , cloud-native , flexibility , opensource
+
+
+
+
+
+
+
+	                      
+spring	Spring boot
+takes time to have spring application	shorter way to run spring application
+manages life cycle of java	need not worry about configuring a data source
+dependency injection framework	preconfigured set of frameworks/technologies
+
+	
+
+	
+
+	
+
+	Embedded Servers
+	-----------------------------------------
+	Spring boot applications always include tomcat as default embedded server. It enables us to run any Spring boot application from the command prompt without including any complex server infrastructure.
+	
+
+	//in pom.xml
+	<dependency>
+	        <groupId>org.springframework</groupId>
+	        <artifactId>spring-web</artifactId>
+	    </dependency>
+	    <dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-tomcat</artifactId>
+	    </dependency>
+	
+
+	
+
+	Bootstrapping the Application
+	-----------------------------------------
+	To run spring boot application, we need to use @SpringBootApplication annotation. Behind the scenes, that’s equivalent to @Configuration, @EnableAutoConfiguration, and @ComponentScan together.
+	
+
+	//initial file when we create the project
+	package com.example.demo;
+	import org.springframework.boot.SpringApplication;
+	import org.springframework.boot.autoconfigure.SpringBootApplication;           
+	@SpringBootApplication
+	public class AirlineProjectApplication {
+		public static void main(String[] args) {
+			SpringApplication.run(AirlineProjectApplication.class, args);
+			System.out.println("application started.....");
+		}
+	}
+	
+
+	When we run the application, auto-configuration feature starts loading all the configuration files, configure them and bootstrap the application based on application properties in application.Properties file in /resources folder.
+	
+
+	src/main/resources->application.Properties
+	
+
+
+	spring boot anotations
+	-----------------------------------------
+	The spring boot annotations are mostly placed in org.springframework.boot.autoconfigure and org.springframework.boot.autoconfigure.condition packages. Let’s learn about some frequently used spring boot annotations as well as which work behind the scenes.
+
+
+1.	@Bean  -used to declare a spring bean it register the return value as a bean within the bean factory.
+2.	@Component -used to indicate that an annotated class is a “component” and will be auto-detected when  using annotation-based configuration and class scanning.
+3.	@Repository -in addition to importing the annotation DAO class into the DI container, it also makes the unchecked exceptions //layer 3
+4.	@Service – in this class we create the business methods//layer4
+5.	@Controller -it used in combination with annotated handler methods based on the RequestMapping annotation
+6.	@Qualifier -if there are two beans of same name then the bean with qualifier will be injected
+Example:-
+{
+@Autowired
+@Qualifier(“fsRepository”)
+private Repository repository;
+}
+7.	@Autowired --Marks a constructor, field, setter method, or config method as to be autowired by dependency injection. We can mark whether the annotated dependency is required (mandatory to populate) or not using it’s ‘required’ attribute. By default, its value is ‘true’.
+8.	@SpringBootApplication -@SpringBootApplication is the main class of a Spring Boot application and application starts from here.
+9.	@SpringBootConfiguration -It indicates that a class provides Spring Boot application configuration. It can be used as an alternative to the Spring’s standard @Configuration annotation so that configuration can be found automatically. Application should only ever include one @SpringBootConfiguration and most idiomatic Spring Boot applications will inherit it from @SpringBootApplication
+10.	@EnableAutoConfiguration-This annotation enables auto-configuration of the Spring Application Context, attempting to guess and configure beans that we are likely to need based on the presence of predefined classes in class path
+11.	@ImportAutoConfiguration-It import and apply only the specified auto-configuration classes. The difference between @ImportAutoConfiguration and @EnableAutoConfiguration is that later attempts to configure beans that are found in the class path during scanning, whereas @ImportAutoConfiguration only runs the configuration classes that we provide in the annotation.
+12.	@AutoConfigureBefore,@AutoConfigureAfter,@AutoConfigureOrder - We can use the @AutoConfigureAfter or @AutoConfigureBefore annotations if our configuration needs to be applied in a specific order (before of after).If we want to order certain auto-configurations that should not have any direct knowledge of each other, we can also use @AutoConfigureOrder. That annotation has the same semantic as the regular @Order annotation but provides a dedicated order for auto-configuration classes.
+	
+
+	spring boot rest API
+-----------------------
+JAX-RS 2.0 is a framework designed to help you write RESTful applications both on the client and server side. Below tutorials are build using REST Easy framework.
+Create REST Controller
  creating a controller package//last layer 
- 
- 
+ example:-
+
  @RestController
 public class SignupController 
 {
+
+	
+
+
 
 create model 
 //pojo with getters and setters
