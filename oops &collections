@@ -18,17 +18,165 @@ class- blue print of an object
                   supports overloading
 
 
-=>onjects--it is an entity
+->class
+-----------------
+blue print of an object
+Collection of objects is called class. It is a logical entity.
+A class can also be defined as a blueprint from which you can create an individual 
+object. Class doesn't consume any space
+A class in Java can contain:
+• Fields
+• Methods
+• Constructors
+• Blocks
+• Nested class and interfac
+ex:-
+class Cricketer
+{
+      public static void main(String args[])
+      {
+	System.out.prinlnt("Hit Sixer");
+      }
+}
+
+->object
+-----------------
+it is an entity
 it shares two characteristics (state and behavior)
-                                 
-=>data encapsulation-- hiding the implementation details of the class from the user
+An Object can be defined as an instance of a class. An object contains an address 
+and takes up some space in memory.
+ex:-
+Cricketer c1=new Cricketer();
+
+
+->Abstraction
+------------------
+Hiding internal details and showing functionality is known as abstraction. For 
+example, phone call, we don't know the internal processing.
+In Java, we use abstract class and interface to achieve abstraction.
+//(what it  is) 
+
+->data encapsulation           
+---------------------------
+hiding the implementation details of the class from the user
 it binds code and data together
+Binding (or wrapping) code and data together into a single unit are known as 
+encapsulation. For example, a capsule, it is wrapped with different medicines.
+ A java class is the example of encapsulation. Java bean is the fully encapsulated 
+class because all the data members are private here.
+//(functionalities)
 
-=>public interface- software entities interact with each other in a system or network,this help in data security
-
-=>inheritance 
+->inheritance                
+--------------------------
 (isA) relationship
-
+When one object acquires all the properties and behaviors of a parent object, it is 
+known as inheritance. It provides code reusability. It is used to achieve runtime 
+polymorphism.
 inheriting the properties of parent class
-(extends)
+
+
+->polymorphism
+-------------------------------
+If one task is performed in different ways, it is known as polymorphism. 
+In Java, we use method overloading to achieve polymorphism.
+
+
+
+
+public interface- software entities interact with each other in a system or network,this help in data security
+
+Construc- it is a "special function" that has the "same name" as of the enclosing class
+it does NOT have return type
+but it can take parameters/arguments
+it is AUTOMATICALLY invoked DURING OBJECT CREATION TIME
+
+1.private-inside class
+2.public- inside class, inside & outside package , outside package subclass.
+3.default- inside class ,only inside package.
+4.protected- inside class , inside package , outside package subclass.
+
+
+Abstract class
+------------------------
+1) Abstract class can have abstract and non-abstract methods.	
+2) Abstract class doesn't support multiple inheritance.         	
+3) Abstract class can have final, non-final, static and non-static variables.	
+4) Abstract class can provide the implementation of interface.	
+5) The abstract keyword is used to declare abstract class.	
+6) An abstract class can extend another Java class and implement multiple Java interfaces.	
+7) An abstract class can be extended using keyword "extends".	
+8) A Java abstract class can have class members like private, protected, etc.	
+9)Example:-
+public abstract class Shape{
+public abstract void draw();
+}	
+
+Interface                       //working
+-----------------------------
+1)Interface can have only abstract methods. Since Java 8, it can have default and static methods also.
+2)Interface supports multiple inheritance.
+3)Interface has only static and final variables.
+4)Interface can't provide the implementation of abstract class.
+5)The interface keyword is used to declare interface.
+6)An interface can extend another Java interface only.
+7)An interface can be implemented using keyword "implements".
+8)Members of a Java interface are public by default.
+Example:-
+public interface Drawable{
+void draw();
+}
+
+Exceptions
+1.checked(by compiler)
+   IOException,SQLException
+2.unchecked(during run)
+   NullpointerException,ArithmeticException
+   
+solution -try catch
+ 
+->Multithreading 
+--------------------------------------------
+Multithreading in Java is a process of executing multiple threads simultaneously.
+
+ Steps to multithreaded program
+	Method A : a. extend from Thread class
+	Method B : a. implement from Runnable interface
+Method A : 
+a. extend from Thread class
+b. override its run() method
+        write the logic to participate in threading
+c. and call its start() method
+        which will invoke your run() method
+
+
+Method B :
+a. implement from Runnable interface
+b. implement the public void run()
+        write the logic to participate in threading
+c. and now create object of 
+        java.lang.Thread class
+	-pass our Runnable's child object to the constructor of Thread class
+d. call Thread's start() which will invoke
+		your Runnables run()
+----------------------------------------------------------------------
+
+S.N.	Modifier and Type	 Method	        Description
+--------------------------------------------------------------------------------------------------------
+1)	void	             start()            used to start the execution of the thread.
+2)	void	             run()	        used to do an action for a thread.
+3)	static void	             sleep()	        sleeps a thread for the specified amount of time.
+4)	static Thread	currentThread()     It returns a reference to the currently executing thread object.
+5)	void	            join()	        waits for a thread to die.
+6)	int	            getPriority()       returns the priority of the thread.
+7)	void	            setPriority()       changes the priority of the thread.
+8)	String	            getName()	        returns the name of the thread.
+9)	void	            setName()	        changes the name of the thread.
+
+-----------------------------------------------------------------------------------
+
+IsA -ex:-washing machine is a machine(abstraction)
+HasA -ex:-washing machine has a tub
+UsesA -ex:-washing machine uses water and current
+ProducesA -ex:-produces washed cloths
+
 
