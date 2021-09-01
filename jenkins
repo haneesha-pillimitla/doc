@@ -2,3 +2,14 @@ jenkins-continuous integration tool
 -------
 
 DevOps:
+devoops life cycle
+
+plan---------------integrate-------------------------
+|                                                   |
+code                                              montor
+|                                                  |
+build                                            operate
+|                                                 |
+test                                             deploy
+|                                                |
+------------------integrate-----------------------
