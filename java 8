@@ -1,13 +1,28 @@
 java 8
 -----------------------------------------------------
+Table of Contents
+-----------------
+1. Lambda Expressions
+2. Functional Interface
+3. Default Methods
+4. Streams
+5. Date/Time API Changes
+
 supports
 =>functional programing-> lambda expression
 
+1. Lambda Expressions
+----------------------
+ex:-
+(x, y) -> x + y  
 void abstractFun(int x);//declaration in FuncInterface interface
 FuncInterface fobj = (int x)->System.out.println(2*x);//obj creatin to interface and lambda expersion 
 fobj.abstractFun(5);//calling
 
-,functional interfaces in Java
+2. Functional Interfaces
+-------------------------
+Functional interfaces are also called Single Abstract Method interfaces (SAM Interfaces). As name suggest, a functional interface permits exactly one abstract method in it.
+
             
 
 
