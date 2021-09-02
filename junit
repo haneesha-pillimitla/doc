@@ -117,7 +117,30 @@ mackito annotations
 ->@Captor is used to create an argument captor.
 
 
+@mock and @injectMocks 
+-------------------------
+@Mock – creates mocks
+@InjectMocks – creates objects and inject mocked dependencies
+
+Use @InjectMocks to create class instances which needs to be tested in test class.
+Use @InjectMocks when actual method body needs to be executed for a given class.
+Use @InjectMocks when we need all internal dependencies initialized with mock objects to work method correctly.
+Use @Mock to create mocks which are needed to support testing of class to be tested.
+Annotated class (to be tested) dependencies with @Mock annotation.
+We must define the when-thenRetrun methods for mock objects which class methods will be invoking during actual test execution.
+-------------------------------------------
+To process with  annotations, MockitoAnnotations.initMocks(testClass); must be used mat least once
+we can use the built-in runner MockitoJUnitRunner or rule MockitoRule
 
 
+example:
+@RunWith(MockitoJUnitRunner.class)
+public class ApplicationTest {
+  @Rule public MockitoRule rule = MockitoJUnit.rule().strictness(Strictness.STRICT_STUBS);
+  @Before
+    public void init() {
+        MockitoAnnotations.initMocks(this);
+    }
+    }
 
 
