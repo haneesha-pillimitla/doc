@@ -78,3 +78,46 @@ assumeTrue()
  Setting up test Cases
  Test Fixtures
  
+
+mocking
+-----------
+mockito + junit
+->mocking refers to the development of the object which are a mock or clone of real objects.
+->in the technique mock objects are used instead of real objects for testing.
+(for every input it gives some output)
+
+mockito
+---------
+->Mockito is an open source framework that allows you to easily create test doubles (mocks). Test Double is a generic term for any case where you replace a production object for testing purposes.
+->mockito is a java based framework used for unit testing of java applications.
+->this mocking framework helps in development of testable applications.
+(validating the behaviour of the application or framework)
+
+
+setting the mockito
+----------------------------
+To add mockito into the project,add jar file in pom.xml.
+
+pom.xml
+-------
+<dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-core</artifactId>
+    <version>2.23.4</version>
+    <scope>test</scope>
+</dependency>
+
+
+
+mackito annotations
+-------------------
+->@Mock is used for mock creation. It makes the test class more readable.
+->@Spy is used to create a spy instance. We can use it instead spy(Object) method.
+->@InjectMocks is used to instantiate the tested object automatically and inject all the @Mock or @Spy annotated field dependencies into it (if applicable).
+->@Captor is used to create an argument captor.
+
+
+
+
+
+
