@@ -3,13 +3,14 @@ jenkins-continuous integration tool
 
 DevOps:
 devoops life cycle
-
+(developer)
 plan---------------integrate-------------------------
+|                       (jenkin                     |
+code(git)                                         montor
 |                                                   |
-code                                              montor
-|                                                  |
-build                                            operate
-|                                                 |
-test                                             deploy
-|                                                |
-------------------integrate-----------------------
+build(maven)                                      operate
+|                                                   |
+test                                              deploy
+|                                                   |
+------------------integrate--------------------------
+
