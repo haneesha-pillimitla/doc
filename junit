@@ -144,3 +144,95 @@ public class ApplicationTest {
     }
 
 
+Mockito – Verify multiple method calls with different arguments
+--------------------------------------------------------------------
+The given unit test has mocked the HashMap class and invokes in put(key, value) code twice. It then verifies that method had been invoked twice. The test further verifies all the different method arguments separately.
+
+example:-
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.times;
+ 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+ 
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.ArgumentCaptor;
+import org.mockito.Captor;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
+ 
+@RunWith(MockitoJUnitRunner.class)
+public class MockitoExample 
+{
+    @Mock
+    HashMap<String, Integer> hashMap;
+ 
+    @Captor
+    ArgumentCaptor<String> keyCaptor;
+ 
+    @Captor
+    ArgumentCaptor<Integer> valueCaptor;
+    (Create as many ArgumentCaptor instances as the number of arguments in the method. In above example, we tested the HashMap which work on key-value pairs, so we created two ArgumentCaptor instances – one for key and second for value.)
+    
+    @Test
+    public void saveTest() 
+    {
+        hashMap.put("A", 10);
+        hashMap.put("B", 20);
+         
+        //1. Verify method was invoked N times
+         
+        Mockito.verify(hashMap, times(2)).put(keyCaptor.capture(), valueCaptor.capture());
+           //(Use Mockito.verify(mock, times(n)) to verify if method was executed 'n' times.)
+        List<String> keys = keyCaptor.getAllValues();
+        List<Integer> values = valueCaptor.getAllValues();
+         
+        //2. Verify method argument values as list
+ 
+        assertEquals(Arrays.asList("A", "B"), keys);
+        assertEquals(Arrays.asList(Integer.valueOf(10), Integer.valueOf(20)), values);
+         
+        //3. Verify method arguments separately
+         
+        assertEquals("A", keys.get(0));
+        assertEquals("B", keys.get(1));
+         
+        assertEquals(Integer.valueOf(10), values.get(0));
+        assertEquals(Integer.valueOf(20), values.get(1));
+    }
+}
+
+
+
+Use ArgumentCaptor.getAllValues() to retrieve all the values passed to one method parameter during all executions. It returns a List of passed argument values.
+We can use assertEquals(expected, result) to verify that expected multiple arguments match with the retrieved values from ArgumentCaptor.
+
+
+mockito with springboot
+-------------------------
+pom.xml
+--------
+<dependency>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.12</version>
+    <scope>test</scope>
+</dependency>
+<dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-core</artifactId>
+    <version>2.15.0</version>
+</dependency>
+<dependency>
+    <groupId>org.mockito</groupId>
+    <artifactId>mockito-inline</artifactId>
+    <version>2.15.0</version>
+</dependency>
+
+-------------------------------------------------------
+
+
+
