@@ -1,0 +1,24 @@
+jms -java message service
+---------------------------
+Java Message Service is an API which supports the formal communication called as messaging between computers on a network.
+It provides a common interface for standard message protocols and message services in support to the Java programs.
+It provides facility to create, send and read messages. 
+The JMS API reduces the concepts that a programmer must learn to use the messaging services/products and it also provides the features that support the messaging applications
+
+benefits of jms
+----------------
+asynchronous-to recevie a message it need not requried to send the request ,message arrrives automatcally.
+reliable-meeage is delivered only once .jms hepls to avoid ploblems that duplicate messages createproblems.
+
+JMS Messaging Domains
+----------------------
+
+jms participating objects
+--------------------------
+JMS application has some basic building blocks, which are:
+  Administered objects – Connection Factories and Destination
+  Connections
+  Sessions
+  Message Producers
+  Message Consumers
+  Message Listeners
