@@ -12,7 +12,41 @@ reliable-meeage is delivered only once .jms hepls to avoid ploblems that duplica
 
 JMS Messaging Domains
 ----------------------
-
+Before the JMS API existed, most messaging products supported either the point-to-point or the publish/subscribe approach to messaging.
+The JMS provides a separate domain for each approach and defines the compliance for each domain.
+Any JMS provider can implement both or one domain, it’s his own choice. 
+The JMS provides the common interfaces which enables us to use the JMS API in such a way that it is not specific to the either domain.
+     point-to-point messaging domain
+     --------------------------------
+         application is built in basis of message queues,sender and recivers
+         Each and every message is addressed to a particular queue
+         characteristics of PTP messaging
+                   There is only one client for each message.
+                   There is no timing dependency for sender and receiver of a message.
+                   The receiver can fetch message whether it is running or not when the sender sends the message.
+                   The receiver sends the acknowledgement after receiving the message.
+                     
+      Publish/Subscribe Messaging Domain
+      -----------------------------------
+         only one message is published which is delivered to all clients through Topic which acts as a bulletin board
+         Publishers and subscribers are generally anonymous and can dynamically publish or subscribe to the topic. 
+         The Topic is responsible to hold and deliver messages
+         The topic retains messages as long as it takes to distribute to the present clients.
+          characteristics ofnpublish/Subscribe messaging domain
+                   There can be multiple subscribers for a message.
+                   The publisher and subscribe have a timing dependency.
+                   A client that subscribes to a topic can consume only messages published after the client has created a subscription, and the subscriber must continue to be active in order for it to consume messages.
+                   
+ Message Consumption
+ --------------------
+ In JMS, the message consumption can be done in two ways:
+ Synchronous
+In synchronous message consumption, the subscriber/receiver request the message from the destination by calling the receive() method.
+In the receive() method will block till the message arrives or time out if the message does not arrive within a given time. 
+Just like normal java method calls with some return value.
+        
+        Asynchronous
+In asynchronous message consumption, a subscriber can register (or subscribe) as message listener with the consumer. The message listener is same as event listener, whenever the message arrives at the destination the JMS provider will deliver the message by calling the listener’s onMessage() method which will act on the content of the message.
 jms participating objects
 --------------------------
 JMS application has some basic building blocks, which are:
