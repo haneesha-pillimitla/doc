@@ -238,3 +238,68 @@ powermock
 adding power mock dependencies to meven project
 
 
+
+junit 
+mockito
+mockito annotations
+power mock
+example for junit with mockito 
+and covering test case in project -createOperation
+creating one test case 
+
+
+
+getting started with maockito
+
+unit test are used to test individual units of code in contract to integration test
+which focus on the interconnections
+
+
+mock objects are the stimulations of real objects
+this are used because the real objects are often complex
+
+and can't directly used in testing environment
+mocks are actually objects of a class derived from real objects class
+
+the functions in these mocks can be stubbed to return a specific value
+
+we emphasize that these mocks aren't directly being tested rather they are objects on which the object thats being tested depends on
+
+mockito is possibly the most popular java library for building and using mocks
+
+
+-------------
+practical
+------------
+
+dependancies to project regarding mockito and junit through its pom.xml file
+
+mock methods
+when.thenReturn syntax
+
+creating mocks and verifing behavior
+
+
+@BeforeEach =Perform an operation at the beginning of a test case
+@Test       =Run a unit test for a particular operation
+@AfterEach  =Perform an operation when each test case is complete
+
+
+
+create an iterator mock containing these values
+
+Iterator<String> iteratorMock = mock(Iterator.class);
+   when(iteratorMock.next()).thenReturn("Peter")
+                            .thenReturn("John")
+                            .thenReturn("Alice");
+
+Mockito allows you to create dummy objects for the dependencies of the object under test
+Selected
+
+You would like to create a new Maven project with built in dependencies for JUnit. Which of the following commands could you use to achieve this?
+mvn archetype:generate \
+   -DgroupId=com.skillsoft.mocks \
+   -DartifactId=mocks-project \
+   -DarchetypeArtifactId=maven-archetype-quickstart \
+   -DinteractiveMode=false
+
