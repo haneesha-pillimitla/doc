@@ -1,8 +1,8 @@
-unit testion and junit
+unit testing and junit
 
 ->unittesting
    gives early look in quality
-   breaking doen a system into its components
+   breaking down a system into its components
 
 junit=automation and repeatability to allow more testiong more oftens
 
@@ -302,4 +302,22 @@ mvn archetype:generate \
    -DartifactId=mocks-project \
    -DarchetypeArtifactId=maven-archetype-quickstart \
    -DinteractiveMode=false
+
+
+
+project code:-
+Understanding of Project Test Case 
+
+OperationControllerTest.java is the test case of OperationController.java  which contains  following methods :- createOperation , deleteOperation , createOperationMatch , deleteOperationMatchByAssociationId and deleteOperToFactByFacilityId
+
+>	The test class should have the annotation @RunWith(SpringRunner.class)
+> As we are dealing with operation Controller  it has annotation @InjectMocks
+>	operCmdOrchestration is next layer of controller to ignore that layer we use @Mock 
+>	taking testCreateOperation method @Test annotation is use to define it as test method 
+(this is the test method of createOperation)
+>	OperationUtilTest.java is a class that contain the constants of the entities 
+>	From testCreateOperation method it has the object of static method OperationRequest ofOperationUtilTest.java
+>	There it stores the given parameter in dummy object it returns the dummy object as the response
+
+
 
