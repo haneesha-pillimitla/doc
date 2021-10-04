@@ -320,4 +320,15 @@ OperationControllerTest.java is the test case of OperationController.java  which
 >	There it stores the given parameter in dummy object it returns the dummy object as the response
 
 
+Mock Testing using PowerMock
+-----------------------------
+PowerMock is an open source mocking library for the Java world.
+It extends the existing mocking frameworks, such as EasyMock and Mockito, to add even more powerful features to them.
+PowerMock enables us to write good unit tests for even the most untestable code.
+Most of the mocking frameworks in Java cannot mock static methods or final classes.
+But using PowerMock, we can mock almost any class.
+
+if we use powermock then the test class contain @RunWith(PowerMockRunner.class)
+
+
 
