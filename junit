@@ -321,7 +321,8 @@ OperationControllerTest.java is the test case of OperationController.java  which
 
 
 Mock Testing using PowerMock
------------------------------
+
+
 PowerMock is an open source mocking library for the Java world.
 It extends the existing mocking frameworks, such as EasyMock and Mockito, to add even more powerful features to them.
 PowerMock enables us to write good unit tests for even the most untestable code.
@@ -330,16 +331,32 @@ But using PowerMock, we can mock almost any class.
 
 if we use powermock then the test class contain @RunWith(PowerMockRunner.class)
 
+Mockito  static methods
 
-<dependency>
-    <groupId>org.powermock</groupId>
-    <artifactId>powermock-module-junit4</artifactId>
-    <version>1.6.4</version>
-    <scope>test</scope>
-</dependency>
-<dependency>
-    <groupId>org.powermock</groupId>
-    <artifactId>powermock-api-mockito</artifactId>
-    <version>1.6.4</version>
-    <scope>test</scope>
-</dependency>
+static methods are those which takes a value and return them;
+
+for testing this we place @PreparedForTest(Utility.class) //utility class is the static method  class name
+Dependency
+  
+	<dependency> 
+<groupId>org.powermock</groupId>
+	    <artifactId>powermock-module-junit4</artifactId>
+	    <version>1.6.4</version>
+	    <scope>test</scope>
+	</dependency>
+	<dependency>
+	    <groupId>org.powermock</groupId>
+	    <artifactId>powermock-api-mockito</artifactId>
+	    <version>1.6.4</version>
+	    <scope>test</scope>
+	</dependency>
+
+
+@MockBean-used to add mock object to the spring application
+
+PowerMockito is a PowerMock’s extension API to support Mockito 
+It helps to work with the java Reflection API in a simple way to over come the problem of Mockito 
+
+
+
+
