@@ -337,7 +337,20 @@ static methods are those which takes a value and return them;
 
 for testing this we place @PreparedForTest(Utility.class) //utility class is the static method  class name
 Dependency
+  verify(mockedUserRepository, times(1)).updateName(1L,"void mock test");
   
+  
+  doNothing() : Completely ignore the calling of void method, this is default behavior
+  
+  doNothing().when(mockedUserRepository).updateName(anyLong(),anyString());
+  
+  
+  
+doAnswer() : Perform some run time or complex operations when void method is called
+doThrow() : Throw exception when mocked void method is called
+doCallRealMethod() : Do not mock and call real method
+
+
 	<dependency> 
 <groupId>org.powermock</groupId>
 	    <artifactId>powermock-module-junit4</artifactId>
